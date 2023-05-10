@@ -33,7 +33,9 @@ public class LoginUser extends Form {
         addActions();
         this.loginForm = loginForm;
         //setUIID("i1");
-        getAllStyles().setBgColor(0xb3d0ff);
+        getAllStyles().setBgColor(0xE3E9FF);
+
+       
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK_IOS_NEW, e-> loginForm.showBack());
         Image bg;
         try{
@@ -53,13 +55,13 @@ public class LoginUser extends Form {
             bgcontainer.getUnselectedStyle().setBgTransparency(255);
             this.add(CENTER, bgcontainer);
         }
-        
-        
+          
         
       
     }
 
     private void addGUIs() {
+  
         Label emailLabel = new Label("Email: ");
         emailLabel.setUIID("labelDefault");
         emailTF = new TextField();
@@ -72,14 +74,14 @@ public class LoginUser extends Form {
         passwordTF.setConstraint(TextField.PASSWORD);
 
         loginButton = new Button("Login");
-        loginButton.setUIID("buttonWhiteCenter");
+        loginButton.setUIID("Button");
       
 
         Button registerButton = new Button("Register");
-        registerButton.setUIID("buttonWhiteCenter");
+        registerButton.setUIID("Button");
         
            Button forgetPasswordButton = new Button("Reset");
-        forgetPasswordButton.setUIID("buttonWhiteCenter");
+        forgetPasswordButton.setUIID("Button");
         
         
         
@@ -92,6 +94,7 @@ buttonsContainer.addAll(registerButton, forgetPasswordButton);
         container.setUIID("containerRounded");
 
         container.addAll(
+               
                 emailLabel, emailTF,
                 passwordLabel, passwordTF,
                 loginButton,

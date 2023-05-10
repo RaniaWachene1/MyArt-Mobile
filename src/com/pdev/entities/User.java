@@ -10,12 +10,55 @@ package com.pdev.entities;
  * @author aminh
  */
 public class User {
-    int id ;
-    String email , nomUser , password,role;
+    int id ,telUser;
+    String email , nomUser , password,role,prenomUser,img;
 
     public User() {
     }
+///
 
+    public User(int id, String email, String nomUser, String prenomUser, int telUser, String img) {
+        this.id = id;
+        this.email = email;
+        this.nomUser = nomUser;
+        this.prenomUser = prenomUser;
+        this.telUser = telUser;
+        this.img = img;
+    }
+
+    public User(String email, String nomUser, String prenomUser, int telUser, String img) {
+        this.email = email;
+        this.nomUser = nomUser;
+        this.prenomUser = prenomUser;
+        this.telUser = telUser;
+        this.img = img;
+    }
+
+    public String getPrenomUser() {
+        return prenomUser;
+    }
+
+    public void setPrenomUser(String prenomUser) {
+        this.prenomUser = prenomUser;
+    }
+
+    public int getTelUser() {
+        return telUser;
+    }
+
+    public void setTelUser(int telUser) {
+        this.telUser = telUser;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+    
+///
     
     public User(int id, String email, String nomUser, String password) {
         this.id = id;
