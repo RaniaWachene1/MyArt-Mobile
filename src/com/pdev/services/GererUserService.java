@@ -84,9 +84,10 @@ public class GererUserService {
             
                         (String) obj.get("email"),
                         (String) obj.get("nomUser")
-                   
+//                        (String) obj.get("prenomUser"),
+//                        (int) Float.parseFloat(obj.get("telUser").toString()),
+//                        (String) obj.get("img")
               
-
                 );
 
                 listUser.add(user);

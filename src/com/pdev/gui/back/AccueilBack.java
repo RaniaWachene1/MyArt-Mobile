@@ -112,21 +112,5 @@ Display.getInstance().getCurrent().removeAll();
         button.addActionListener(action -> new com.pdev.gui.back.stat.statForm(this).show());
         return button;
     }
-//private Button stat() {
-//        Button button = new Button("stat");
-//        button.setUIID("buttonMenu");
-//        button.setMaterialIcon(FontImage.MATERIAL_ERROR);
-// button.addActionListener(new ActionListener<ActionEvent>() {
-//            @Override
-//            public void actionPerformed(ActionEvent evt) {
-//                // create a new form and show it
-//                Form newForm = new statForm(previous);
-//                newForm.show();
-//            }
-//        });        return button;
-//    }
-
-   
-
 
 }

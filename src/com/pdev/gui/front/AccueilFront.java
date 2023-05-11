@@ -12,10 +12,9 @@ import com.codename1.ui.Display;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
+import com.codename1.ui.Toolbar;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.layouts.BoxLayout;
-import com.codename1.ui.plaf.UIManager;
-import com.codename1.ui.util.Resources;
 import com.pdev.gui.Login;
 import com.pdev.gui.back.LoginUser;
 
@@ -24,12 +23,14 @@ import com.pdev.gui.back.LoginUser;
  * @author ASUS
  */
 public class AccueilFront extends Form{
-    Resources theme = UIManager.initFirstTheme("/theme");
+    Toolbar tb=getToolbar();
     Label label;
-
+//
     public AccueilFront() {
+        
         super("Menu", new BoxLayout(BoxLayout.Y_AXIS));
         super.getToolbar().addCommandToLeftBar(new Command("Logout") {
+            
     @Override
     public void actionPerformed(ActionEvent evt) {
         // Clear the current session
@@ -46,16 +47,21 @@ Display.getInstance().getCurrent().removeAll();
 });
         addGUIs();
     }
+    
     private void addGUIs(){
         Container menuContainer = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         menuContainer.isScrollableY();
         menuContainer.addAll(
                 //userContainer,
                 
+    
                 reclamationButton(),
                 article()
         );
-
+        
+tb.addMaterialCommandToSideMenu("My profile", FontImage.MATERIAL_APPS , 200, e->{
+    new MyProfile(this).show();
+    });
         this.add(menuContainer);
     }
     private Button reclamationButton() {
@@ -65,6 +71,7 @@ Display.getInstance().getCurrent().removeAll();
         button.addActionListener(action -> new com.pdev.gui.front.reclamation.DisplayAll(this).show());
         return button;
     }
+    
     
        private Button article() {
         Button button = new Button(" article");
